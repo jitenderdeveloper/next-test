@@ -1,0 +1,218 @@
+import Category from "./Category";
+import { Swiper, SwiperSlide } from "swiper/react";
+// import SwiperCore, { Navigation, Scrollbar, A11y, Autoplay } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
+import Link from "next/link";
+
+// SwiperCore.use([Navigation, Scrollbar, A11y, Autoplay]);
+
+export const getData = async () => {
+  const res = await fetch("https://api.cashdost.com/api/banner");
+  const data = await res.json();
+  return data?.banner_data || [];
+};
+
+const Slider = async ({ banner }) => {
+  const serverData = banner;
+  console.log("banner", serverData);
+
+  const findalData = serverData?.filter((item) =>
+    item.status.includes("success")
+  );
+
+  return (
+    <>
+      <div className="container mt-4 mb-4">
+        <div className="row  ">
+          <div className="col-12 col-lg-4 col-md-4 ">
+            <Category />
+          </div>
+
+          <div className="col-12 col-lg-8 col-md-8 col-sm-8">
+            <>
+              <Swiper
+                spaceBetween={50}
+                slidesPerView={1}
+                navigation
+                scrollbar={{ draggable: true }}
+                loop={true}
+                autoplay={{
+                  delay: 2500,
+                  disableOnInteraction: false,
+                }}
+                className="mySwiper"
+              >
+                {findalData?.map((val, ind) => {
+                  const {
+                    title,
+                    description,
+                    category,
+                    client,
+                    link,
+                    image,
+                    createdAt,
+                  } = val;
+                  return (
+                    <SwiperSlide key={ind}>
+                      <Link href={link} target="_blank">
+                        <div className="slider-items">
+                          <div className="slider-img">
+                            <img src={image} alt={title} lazy="loading" />
+                          </div>
+                          <div className="slider-content d-flex justify-content-arround">
+                            <span className="slider_side_content">
+                              <h1>{title?.slice(0, 70)}</h1>
+                              <p>{description?.slice(0, 180)}</p>
+                              <ul>
+                                <li>
+                                  <span>{client?.title}</span>
+                                </li>
+                                <li>
+                                  <span>{category?.name}</span>
+                                </li>
+                                <li>
+                                  <span>{createdAt?.slice(0, 10)}</span>
+                                </li>
+                              </ul>
+                            </span>
+                            <span className="slider_banner">
+                              <Link href={link} type="button" target="_blank">
+                                Grab Now
+                              </Link>
+                            </span>
+                          </div>
+                        </div>
+                      </Link>
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper>
+            </>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export async function getServerSideProps() {
+  const banner = await getData();
+
+  return {
+    props: {
+      banner,
+    },
+  };
+}
+
+export default Slider;
+
+
+
+
+
+---------------------------------------------silder----------------------------------------
+import Link from "next/link";
+
+export async function getData() {
+  const res = await fetch(`https://api.cashdost.com/api/banner`, {
+    cache: "force-cache",
+  });
+  const data = await res.json();
+  return {
+    props: {
+      banner: data?.banner_data || {},
+    },
+  };
+}
+
+async function Slider_Com() {
+  const { props } = await getData();
+
+  const findalData = props?.banner?.filter((item) =>
+    item.status.includes("success")
+  );
+  return (
+    <>
+      <div
+        id="carouselExampleControls"
+        className="carousel slide"
+        data-bs-ride="carousel"
+      >
+        <div className="carousel-inner">
+          {findalData?.map((val, ind) => {
+            const {
+              title,
+              description,
+              category,
+              client,
+              link,
+              image,
+              createdAt,
+            } = val;
+            return (
+              <div className="carousel-item active slider_items" key={ind}>
+                <Link href={link} target="_blank">
+                  <div className="slider-items">
+                    <div className="slider-img">
+                      <img src={image} alt={title} lazy="loading" />
+                    </div>
+                    <div className="slider-content d-flex justify-content-arround">
+                      <span className="slider_side_content">
+                        <h1>{title?.slice(0, 70)}</h1>
+                        <p>{description?.slice(0, 180)}</p>
+                        <ul>
+                          <li>
+                            <span>{client?.title}</span>
+                          </li>
+                          <li>
+                            <span>{category?.name}</span>
+                          </li>
+                          <li>
+                            <span>{createdAt?.slice(0, 10)}</span>
+                          </li>
+                        </ul>
+                      </span>
+                      <span className="slider_banner">
+                        <Link href={link} type="button" target="_blank">
+                          Grab Now
+                        </Link>
+                      </span>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            );
+          })}
+        </div>
+        <button
+          className="carousel-control-prev"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="prev"
+        >
+          <span
+            className="carousel-control-prev-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Previous</span>
+        </button>
+        <button
+          className="carousel-control-next"
+          type="button"
+          data-bs-target="#carouselExampleControls"
+          data-bs-slide="next"
+        >
+          <span
+            className="carousel-control-next-icon"
+            aria-hidden="true"
+          ></span>
+          <span className="visually-hidden">Next</span>
+        </button>
+      </div>
+    </>
+  );
+}
+
+export default Slider_Com;
