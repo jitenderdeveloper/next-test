@@ -173,6 +173,10 @@ button:hover {
 }
 
 /* --------------------------slider-section------------------------- */
+.carousel-inner{
+  height: 70vh;
+  border-radius: var(--radius);
+}
 .slider-items {
   height: auto !important;
 }
@@ -214,7 +218,6 @@ button:hover {
 .slider-img img {
   border-radius: var(--radius) var(--radius) 0 0;
 }
-
 .swiper-button-prev:after,
 .swiper-button-next:after {
   width: 100%;
@@ -227,13 +230,15 @@ button:hover {
   font-weight: 900;
 }
 
+.carousel-control-prev-icon,
+.carousel-control-next-icon,
 .swiper-button-prev,
 .swiper-button-next {
   height: 40px !important;
   width: 40px !important;
   overflow: hidden;
   border-radius: 50%;
-  background-image: var(--gradien-hover-color);
+  background-color: var(--color) !important;
   color: var(--white) !important;
 }
 

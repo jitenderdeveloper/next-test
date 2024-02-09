@@ -17,30 +17,30 @@ export async function getData() {
   };
 }
 
-export async function getFilterData(params) {
-  const q = params?.category;
-  const res = await fetch(
-    `https://api.cashdost.com/api/blog/category/filter/${q}`,
-    {
-      cache: "force-cache",
-    }
-  );
-  const data = await res.json();
-  return {
-    props: {
-      blog: data?.search_blog || {},
-    },
-  };
-}
+// export async function getFilterData(params) {
+//   const q = params?.category;
+//   const res = await fetch(
+//     `https://api.cashdost.com/api/blog/category/filter/${q}`,
+//     {
+//       cache: "force-cache",
+//     }
+//   );
+//   const data = await res.json();
+//   return {
+//     props: {
+//       blog: data?.search_blog || {},
+//     },
+//   };
+// }
 
-async function Blog({ params }) {
-  const categoryFilter = "params";
-  // let spin = categoryFilter.split("-")?.join(" ");
-  console.log("params", params);
+async function Blog() {
+  // const categoryFilter = "params";
+  // // let spin = categoryFilter.split("-")?.join(" ");
+  // console.log("params", params);
 
   const { props: allBlog } = await getData();
-  const { props } = await getFilterData(params);
-  const filterBlog = props;
+  // const { props } = await getFilterData(params);
+  // const filterBlog = props;
 
   const findalData = allBlog?.blog?.filter((item) =>
     item.status.includes("success")
