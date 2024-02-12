@@ -3,7 +3,6 @@ import { FiCheckCircle, FiMail, FiPhoneCall, FiUser } from "react-icons/fi";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import { toast } from "react-toastify";
-import { URL_LINK } from "@/app/secure/page";
 import { useEffect, useState } from "react";
 
 import { ToastContainer } from "react-toastify";
@@ -44,7 +43,7 @@ function ContactUs() {
         message: message,
       };
 
-      fetch(`${URL_LINK}/contact`, {
+      fetch("https://api.cashdost.com/api/contact", {
         method: "POST",
         headers: {
           "Access-Control-Allow-Origin": "*",
