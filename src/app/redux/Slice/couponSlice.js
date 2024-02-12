@@ -1,6 +1,5 @@
-import { URL_LINK } from "@/app/secure/page";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-
+const URL_LINK = "https://api.cashdost.com/api"
 export const coupon = createApi({
   reducerPath: "coupon",
   baseQuery: fetchBaseQuery({ baseUrl: `${URL_LINK}` }),
