@@ -1,8 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  css: ["@/app/globals.css"],
-  css: ["@/app/custom.css"],
+  //   css: ["@/app/globals.css"],
+  //   css: ["@/app/custom.css"],
+  swcMinify: true,
   experimental: {
     images: {
       upoptimized: true,
