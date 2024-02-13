@@ -26,7 +26,7 @@ async function Card_Store() {
           let aClient = clients?.join("-");
           return (
             <li key={ind} className="nav-items">
-              <Link href={`/coupon/${aClient}`} className="nav-link">
+              <Link href={`/coupon/view/${aClient}`} className="nav-link">
                 <span>
                   <FiChevronRight />
                 </span>

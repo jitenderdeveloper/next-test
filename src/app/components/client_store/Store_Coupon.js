@@ -50,7 +50,7 @@ async function Store_Coupon({ params }) {
         if (client_key === client.title) {
           return (
             <div key={ind} className="col-12 col-lg-4 col-md-4 mt-4">
-              <Link href={`/coupon/${client?.title}/${encodedTitle}/${_id}`}>
+              <Link href={`/coupon/view/${client?.title}/${encodedTitle}/${_id}`}>
                 <div className="outer-items">
                   <div className="items-image">
                     <img src={client?.logo} alt={title} lazy="loading" />
@@ -71,7 +71,7 @@ async function Store_Coupon({ params }) {
                       <h4>{offer?.slice(0, 26)}</h4>
                       <p>{description?.slice(0, 65)}...</p>
                       <Link
-                        href={`/coupon/${client?.title}/${encodedTitle}/${_id}`}
+                        href={`/coupon/view/${client?.title}/${encodedTitle}/${_id}`}
                         // onClick={() => redirectHandler(link)}
                         type="button"
                         className="coupon_link_btn"

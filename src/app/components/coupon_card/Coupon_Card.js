@@ -61,7 +61,7 @@ async function Coupon_Card() {
                     <h4>{offer?.slice(0, 26)}</h4>
                     <p>{description?.slice(0, 65)}...</p>
                     <Link
-                      href={`/coupon/${client?.title}/${encodedTitle}/${_id}`}
+                      href={`/coupon/view/${client?.title}/${encodedTitle}/${_id}`}
                       //   onClick={() => redirectHandler(link)}
                       type="button"
                       className="coupon_link_btn"
