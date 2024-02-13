@@ -1,7 +1,7 @@
 import { FiCalendar } from "react-icons/fi";
 import Link from "next/link";
 
-export async function getData() {
+export async function getServerSideProps() {
   const res = await fetch("https://api.cashdost.com/api/product", {
     cache: "force-cache",
   });
@@ -14,7 +14,7 @@ export async function getData() {
 }
 
 const Deals = async () => {
-  const data = await getData();
+  const data = await getServerSideProps();
   const serverData = data?.props?.product;
   // console.log("props", serverData);
   const findalData = serverData?.filter((item) =>

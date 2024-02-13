@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { FiCalendar, FiClock } from "react-icons/fi";
 
-export async function getData(keys) {
+export async function getServerSideProps(keys) {
   const q = keys;
   // console.log("key", params);
   const res = await fetch(`https://api.cashdost.com/api/store/search/q/${q}`, {
@@ -20,7 +20,7 @@ async function Store_Coupon({ params }) {
   const client_key = params?.client?.split("-")?.join(" ");
   const cate_key = params?.category;
   const keys = cate_key === "All" ? client_key : cate_key;
-  const { props } = await getData(keys);
+  const { props } = await getServerSideProps(keys);
   const findalCoupon = props?.coupons?.filter((item) =>
     item.post_data.includes("success")
   );

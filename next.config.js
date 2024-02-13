@@ -1,4 +1,8 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    reactStrictMode: true,
+    css: ['@/app/globals.css'],
+    css: ['@/app/custom.css'],
+};
 
 module.exports = nextConfig

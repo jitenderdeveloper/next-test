@@ -5,7 +5,7 @@ import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import Social_Share from "../social_share/Social_Share";
 
-export async function getData(params) {
+export async function getServerSideProps(params) {
   const id = params?.id;
   const res = await fetch(`https://api.cashdost.com/api/product/${id}`, {
     cache: "force-cache",
@@ -23,7 +23,7 @@ async function View_Pro({ params }) {
   const store = params?.client;
   const spe = titles?.split("-")?.join(" ");
 
-  const { props } = await getData(params);
+  const { props } = await getServerSideProps(params);
 
   const share_loc = `https://cashdost.com/deals/${store}/${titles}/${params?.id}`;
 

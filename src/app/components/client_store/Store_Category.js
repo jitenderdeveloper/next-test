@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FiChevronRight } from "react-icons/fi";
 
-export async function getData() {
+export async function getServerSideProps() {
   const res = await fetch("https://api.cashdost.com/api/category", {
     cache: "force-cache",
   });
@@ -15,7 +15,7 @@ export async function getData() {
 
 async function Store_Category({ params }) {
   const client_key = params?.client?.split("-")?.join(" ");
-  const data = await getData();
+  const data = await getServerSideProps();
   const serverData = data?.props?.category;
 
   const findalCategory = serverData?.filter((item) =>

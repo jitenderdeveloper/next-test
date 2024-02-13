@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FiChevronRight } from "react-icons/fi";
 
-export async function getData() {
+export async function getServerSideProps() {
   const res = await fetch("https://api.cashdost.com/api/store", {
     cache: "force-cache",
   });
@@ -14,7 +14,7 @@ export async function getData() {
 }
 
 async function Client_Store() {
-  const { props } = await getData();
+  const { props } = await getServerSideProps();
   const findalClient = props?.store?.filter((item) =>
     item.post_data.includes("success")
   );
