@@ -7,12 +7,13 @@ import Navbar from "@/app/components/Navbar";
 function Authorization() {
   const [toggle, setToggle] = useState(true);
 
-  let storage = localStorage.getItem("user_data");
+  const userDataString = localStorage.getItem("user_data");
+    const user = JSON.parse(userDataString);
 
   return (
     <>
-    <Navbar />
-      {storage ? (
+      <Navbar />
+      {user ? (
         (window.location.href = "/")
       ) : (
         <div className="container-fluid p-0 overflow-hidden">
@@ -90,6 +91,5 @@ function Authorization() {
     </>
   );
 }
-
 
 export default Authorization;

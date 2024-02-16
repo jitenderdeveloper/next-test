@@ -2,16 +2,26 @@
 
 import Link from "next/link";
 import Script from "next/script";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FiLogIn, FiUser } from "react-icons/fi";
 
 function LogoutBtn() {
-  //   const [show, setShow] = useState(false);
-  const userDataString = localStorage.getItem("user_data");
-  const user = JSON.parse(userDataString);
+  const [user, setUser] = useState(null);
 
-  const LogoutHandler = () => {
+  useEffect(() => {
+    // Check if localStorage is available before accessing it
+    const userDataString = localStorage.getItem("user_data");
+
+    if (userDataString) {
+      setUser(JSON.parse(userDataString));
+    }
+  }, []); // Empty dependency array ensures this effect runs only once after mount
+
+  const logoutHandler = () => {
+    // Remove user data from localStorage
     localStorage.removeItem("user_data");
+    setUser(null);
+    // Redirect or handle logout action
     window.location.href = "/";
   };
 
@@ -68,7 +78,7 @@ function LogoutBtn() {
                     href="#"
                     type="button"
                     className="nav-link logout-btn"
-                    onClick={LogoutHandler}
+                    onClick={logoutHandler}
                   >
                     Logout
                   </Link>
