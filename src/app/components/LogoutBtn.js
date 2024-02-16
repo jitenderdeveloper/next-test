@@ -9,7 +9,7 @@ function LogoutBtn() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Check if localStorage is available before accessing it
+    
     const userDataString = localStorage.getItem("user_data");
 
     if (userDataString) {

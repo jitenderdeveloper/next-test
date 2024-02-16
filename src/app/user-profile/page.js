@@ -7,11 +7,12 @@ function Profile() {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Check if localStorage is available before accessing it
-    const userDataString = localStorage.getItem("user_data");
+    if (typeof window !== "undefined") {
+      const userDataString = localStorage.getItem("user_data");
 
-    if (userDataString) {
-      setUser(JSON.parse(userDataString));
+      if (userDataString) {
+        setUser(JSON.parse(userDataString));
+      }
     }
   }, []);
 
