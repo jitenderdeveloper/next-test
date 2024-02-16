@@ -136,3 +136,11 @@ function page({ params }) {
 
 
 export default page;
+
+
+export function generateMetadata() {
+  return {
+    title: "Best Online Deals, Coupons & Shopping offers in India - Cashdost",
+    description:"Explore Best Online Deals, Discounts, Coupons & Shopping offers for top online shopping websites in India. Save your money with Discounts from Cashdost.",
+  };
+}

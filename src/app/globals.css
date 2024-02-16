@@ -330,10 +330,10 @@ ul {
   /* border-radius: var(--radius); */
 }
 .dropdown-toggle::after {
-  display: none;
+  display: none !important;
 }
 .dropdown-toggle {
-  padding: 0;
+  padding: 0 !important;
   width: 40px;
   height: 40px;
   background-color: transparent;
@@ -350,8 +350,9 @@ ul {
 .dropdown-menu {
   width: auto;
   border: none;
-  padding: 10px;
+  padding: 10px !important;
   background-image: var(--gradient-color);
+  border: 1px solid red;
 }
 
 .profile-icon .nav-item .nav-link:hover {
@@ -365,11 +366,14 @@ ul {
 .dropdown-menu li {
   margin-bottom: 5px !important;
 }
+
 .dropdown-menu li .logout-btn {
   text-align: center;
   background-color: red;
   border-radius: var(--radius);
+  color: var(--bg-color) !important;
 }
+
 .dropdown-menu li .logout-btn:hover {
   background-color: rgb(255, 75, 75) !important;
   color: var(--bg-color);

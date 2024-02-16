@@ -211,3 +211,11 @@ function Coupon({ params }) {
 }
 
 export default Coupon;
+
+
+export function generateMetadata() {
+  return {
+    title: "All Coupons",
+    description:"Explore Best Online Deals, Discounts, Coupons & Shopping offers for top online shopping websites in India. Save your money with Discounts from Cashdost.",
+  };
+}

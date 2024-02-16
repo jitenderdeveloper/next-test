@@ -1,11 +1,13 @@
-import { FiMenu } from "react-icons/fi";
+import { FiMenu, FiUser } from "react-icons/fi";
 import { BsTelegram } from "react-icons/bs";
 import Link from "next/link";
 import Search_Bar from "./search/Search_Bar";
+import LogoutBtn from "./LogoutBtn";
 
-function navbar() {
+function Navbar() {
   return (
     <>
+    
       <nav className="navbar navbar-expand-lg navbar-light bg-light sticky-top">
         <div className="container navbar-container">
           <Link className="navbar-brand" href="/">
@@ -61,19 +63,11 @@ function navbar() {
               Join Us
             </Link>
           </div>
-          <div className="signup-btn">
-            <Link
-              href="/user-profile-authorization"
-              type="button"
-              className="btn"
-            >
-              Login / Signup
-            </Link>
-          </div>
+          <LogoutBtn />
         </div>
       </nav>
     </>
   );
 }
 
-export default navbar;
+export default Navbar;

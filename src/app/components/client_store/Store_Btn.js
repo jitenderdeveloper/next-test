@@ -3,7 +3,7 @@ import { useState } from "react";
 import { AiFillAppstore } from "react-icons/ai";
 import { ImTicket } from "react-icons/im";
 
-function Store_Btn({ params }, {showState}) {
+function Store_Btn({ params }) {
   const client_key = params?.client?.split("-")?.join(" ");
   const cate_key = params?.category;
   const [show, setShow] = useState(false)
@@ -15,9 +15,6 @@ function Store_Btn({ params }, {showState}) {
   };
   const couponHandlerFun = () => {
     setShow(false);
-  };
-  const AllHandlerFun = () => {
-    setShow(true);
   };
   
   return (

@@ -9,11 +9,11 @@ import Store_Coupon from "@/app/components/client_store/Store_Coupon";
 import Store_Deal from "@/app/components/client_store/Store_Deal";
 import Store_Btn from "@/app/components/client_store/Store_Btn";
 
-function View_Store({ params, showState }) {
+function View_Store({ params }) {
   const client_key = params?.client?.split("-")?.join(" ");
   const cate_key = params?.category;
   const keys = cate_key === "All" ? client_key : cate_key;
-  console.log("keys :", showState);
+  console.log("keys :", cate_key);
 
   return (
     <>

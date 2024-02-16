@@ -35,11 +35,8 @@ function Slider_Com() {
             } = val;
             return (
               <>
-                <div
-                  className={`carousel-item ${
-                    ind === activeIndex ? "active" : ""
-                  }`}
-                  key={ind}
+                <div key={val?._id}
+                  className={`carousel-item ${ ind === activeIndex ? "active" : "" }`} 
                 >
                   <Link href={link} target="_blank">
                     <div className="slider-items">

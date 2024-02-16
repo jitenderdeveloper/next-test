@@ -1,0 +1,5 @@
+User-agent: *
+allow: 
+Disallow: /cgi-bin/
+
+Sitemap: https://cashdost.com/sitemap.xml
