@@ -1,11 +1,19 @@
-"use client"
+"use client";
+import { useEffect } from "react";
 import Navbar from "../components/Navbar";
 import MyProfile from "../components/myProfile/MyProfile";
 
 function Profile() {
-    
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // Check if localStorage is available before accessing it
     const userDataString = localStorage.getItem("user_data");
-    const user = JSON.parse(userDataString);
+
+    if (userDataString) {
+      setUser(JSON.parse(userDataString));
+    }
+  }, []);
 
   return (
     <>

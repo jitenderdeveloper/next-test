@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Login from "./login/page";
 import Register from "./register/page";
 import Navbar from "@/app/components/Navbar";
@@ -7,8 +7,16 @@ import Navbar from "@/app/components/Navbar";
 function Authorization() {
   const [toggle, setToggle] = useState(true);
 
-  const userDataString = localStorage.getItem("user_data");
-    const user = JSON.parse(userDataString);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    // Check if localStorage is available before accessing it
+    const userDataString = localStorage.getItem("user_data");
+
+    if (userDataString) {
+      setUser(JSON.parse(userDataString));
+    }
+  }, []);
 
   return (
     <>
