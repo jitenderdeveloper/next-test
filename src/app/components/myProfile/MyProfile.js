@@ -14,7 +14,6 @@ export function getToken() {
 }
 
 function MyProfile() {
-  console.log("user data", getToken());
   const [loading, setLoading] = useState(false);
 
   const [username, setUsername] = useState("");
@@ -103,10 +102,10 @@ function MyProfile() {
               theme: "colored",
             });
 
-            // setTimeout(() => {
-            //   localStorage.clear();
-            //   window.location.href = "/";
-            // }, 2000);
+            setTimeout(() => {
+              localStorage.clear();
+              window.location.href = "/";
+            }, 2000);
           }
         });
     }
@@ -153,8 +152,7 @@ function MyProfile() {
 
             setTimeout(() => {
               localStorage.clear();
-              nevigate("/");
-              window.location.reload();
+              window.location.href = "/";
             }, 2000);
           }
         })

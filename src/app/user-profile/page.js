@@ -1,28 +1,14 @@
-"use client";
-import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import MyProfile from "../components/myProfile/MyProfile";
 
 function Profile() {
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      const userDataString = localStorage.getItem("user_data");
-
-      if (userDataString) {
-        setUser(JSON.parse(userDataString));
-      }
-    }
-  }, []);
-
   return (
     <>
       <Navbar />
       <div className="container">
         <div className="row mt-4">
           <div className="col-12 col-data">
-            <h4>Hey, {user && user.username} Welcome to Cashdost</h4>
+            <h4> Welcome to Cashdost</h4>
           </div>
         </div>
         <div className="row mt-4 mb-4">
@@ -58,7 +44,8 @@ function Profile() {
                   role="tabpanel"
                   aria-labelledby="v-pills-home-tab"
                 >
-                  <MyProfile />
+                  {/* <MyProfile /> */}
+                  <h4>My Profile</h4>
                 </div>
               </div>
             </div>
