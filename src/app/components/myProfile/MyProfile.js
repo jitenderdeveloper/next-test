@@ -11,7 +11,17 @@ function MyProfile() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
 
-  const storage = JSON.parse(localStorage.getItem("user_data"));
+  const [store, setStore] = useState();
+
+  console.log("storage", store);
+
+  useEffect(() => {
+    const storage = JSON.parse(localStorage.getItem("user_data"));
+    if (storage) {
+      setStore(storage);
+    }
+    return;
+  }, []);
 
   const getData = async () => {
     try {
@@ -192,7 +202,7 @@ function MyProfile() {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
-                {storage && storage.email_verified !== "false" ? (
+                {store && store?.email_verified !== "false" ? (
                   <span className="verify-info verify-success">
                     <FiCheck />
                   </span>
