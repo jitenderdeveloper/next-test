@@ -68,7 +68,10 @@ ul {
   padding-left: 0 !important;
   margin-bottom: 0;
 }
-
+.spinner{
+  display: none !important;
+}
+.fillter-coupons-design .filter_btn,
 .main-content a,
 button {
   padding: 4px 10px;
@@ -78,7 +81,7 @@ button {
   border-radius: 4px;
   font-size: 12px !important;
 }
-
+.fillter-coupons-design .filter_btn:hover,
 .main-content a:hover,
 .category .category-list ul li a:hover,
 button:hover {
@@ -479,17 +482,17 @@ button:hover {
 .Hand-picked-img:hover h6 {
   text-decoration: underline;
 }
-.fillter-coupons-design button {
+.fillter-coupons-design .filter_btn {
   margin: 0 10px;
   border-radius: var(--radius);
 }
-.fillter-coupons-design button:nth-child(1) {
+.fillter-coupons-design .filter_btn:nth-child(2) {
   margin: 0;
 }
-.fillter-coupons-design button span{
+.fillter-coupons-design .filter_btn span{
   font-size: 11px;
-  background-color: var(--body-color);
-  color: var(--color);
+  background-color: var(--body-color) !important;
+  color: var(--color) !important;
   padding: 3px 5px;
   border-radius: 2px;
   margin-left: 10px;
@@ -522,16 +525,17 @@ button:hover {
 
 .coupon_btn .coupon_link_btn{
   border: 1px dotted var(--color) !important;
-  width: 100%;
+  width: 100% !important;
   height: 6vh;
   background: transparent !important;
   color: var(--font-color) !important;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-end !important;
   position: relative;
   overflow: hidden;
   text-transform: uppercase;
+  font-size: 10px !important;
 }
 
 .coupon_btn .coupon_link_btn::after{
@@ -551,6 +555,7 @@ button:hover {
 .coupon_btn .coupon_link_btn span{
   z-index: 99 !important;
   color: var(--white);
+  width: 50%;
 }
 
 

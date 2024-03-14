@@ -44,8 +44,7 @@ function Profile() {
                   role="tabpanel"
                   aria-labelledby="v-pills-home-tab"
                 >
-                  {/* <MyProfile /> */}
-                  <h4>My Profile</h4>
+                  <MyProfile />
                 </div>
               </div>
             </div>

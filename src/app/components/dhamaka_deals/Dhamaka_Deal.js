@@ -21,60 +21,65 @@ const Dhamaka_Deal = async ({ params }) => {
   const findalProduct = serverData?.filter((item) =>
     item.post_data.includes("success")
   );
-  // console.log("product", findalProduct);
 
   return (
     <>
-      {findalProduct?.map((val, ind) => {
-        const {
-          client,
-          description,
-          _id,
-          link,
-          title,
-          image,
-          category,
-          createdAt,
-        } = val;
-        const titles = title?.split(" ")?.join("-");
-        const encodedTitle = encodeURIComponent(titles);
-        return (
-          <div key={ind} className="col-12 col-lg-4 col-md-4 mt-4">
-            <Link href={`/store/${client?.title}/${encodedTitle}/${_id}`}>
-              <div className="outer-items">
-                <div className="items-image">
-                  <img src={image} alt={title} lazy="loading" />
-                  <span>
-                    <img
-                      src={client?.logo}
-                      alt={client?.title}
-                      lazy="loading"
-                    />
-                  </span>
-                </div>
-                <div className="items-content">
-                  <div className="items-icon d-flex justify-content-between mb-2 mt-1">
-                    <span>{category?.name}</span>
-                    <span>
-                      <FiCalendar /> {createdAt?.slice(0, 10)}
-                    </span>
+      {findalProduct?.length === 0 ? (
+        <p className="text-center text-danger">No Product Found</p>
+      ) : (
+        <>
+          {findalProduct?.map((val, ind) => {
+            const {
+              client,
+              description,
+              _id,
+              link,
+              title,
+              image,
+              category,
+              createdAt,
+            } = val;
+            const titles = title?.split(" ")?.join("-");
+            const encodedTitle = encodeURIComponent(titles);
+            return (
+              <div key={ind} className="col-12 col-lg-4 col-md-4 mt-4">
+                <Link href={`/store/${client?.title}/${encodedTitle}/${_id}`}>
+                  <div className="outer-items">
+                    <div className="items-image">
+                      <img src={image} alt={title} lazy="loading" />
+                      <span>
+                        <img
+                          src={client?.logo}
+                          alt={client?.title}
+                          lazy="loading"
+                        />
+                      </span>
+                    </div>
+                    <div className="items-content">
+                      <div className="items-icon d-flex justify-content-between mb-2 mt-1">
+                        <span>{category?.name}</span>
+                        <span>
+                          <FiCalendar /> {createdAt?.slice(0, 10)}
+                        </span>
+                      </div>
+                      <div className="main-content">
+                        <h4>{title?.slice(0, 26)}...</h4>
+                        <p>{description?.slice(0, 65)}...</p>
+                        <Link
+                          href={`/store/${client?.title}/${encodedTitle}/${_id}`}
+                          type="button"
+                        >
+                          Grab Now
+                        </Link>
+                      </div>
+                    </div>
                   </div>
-                  <div className="main-content">
-                    <h4>{title?.slice(0, 26)}...</h4>
-                    <p>{description?.slice(0, 65)}...</p>
-                    <Link
-                      href={`/store/${client?.title}/${encodedTitle}/${_id}`}
-                      type="button"
-                    >
-                      Grab Now
-                    </Link>
-                  </div>
-                </div>
+                </Link>
               </div>
-            </Link>
-          </div>
-        );
-      })}
+            );
+          })}
+        </>
+      )}
     </>
   );
 };

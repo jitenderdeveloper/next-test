@@ -7,14 +7,13 @@ import Store_Category from "@/app/components/client_store/Store_Category";
 import Client_Store from "@/app/components/client_store/Client_Store";
 import Store_Coupon from "@/app/components/client_store/Store_Coupon";
 import Store_Deal from "@/app/components/client_store/Store_Deal";
-import Store_Btn from "@/app/components/client_store/Store_Btn";
+import { AiFillAppstore } from "react-icons/ai";
+import AllProductCoupon from "@/app/components/client_store/AllProductCoupon";
 
-function View_Store({ params }) {
+async function View_Store({ params }) {
   const client_key = params?.client?.split("-")?.join(" ");
   const cate_key = params?.category;
   const keys = cate_key === "All" ? client_key : cate_key;
-  console.log("keys :", cate_key);
-
   return (
     <>
       <Navbar />
@@ -92,12 +91,12 @@ function View_Store({ params }) {
               <div className="CATEGORY-section">
                 <div className="row">
                   <div className="col-12 col-lg-12 col-md-12">
-                    <div className="client-selector mb-3">
+                    {/* <div className="client-selector mb-3">
                       <div className="sarch-text">
                         <h5>Category</h5>
                       </div>
                       <Store_Category params={params} />
-                    </div>
+                    </div> */}
                     <div className="client-selector">
                       <div className="sarch-text">
                         <h5>Store</h5>
@@ -109,21 +108,47 @@ function View_Store({ params }) {
               </div>
             </div>
           </div>
-
           <div className="col-lg-9 col-12">
             <div className="coupons-header d-flex justify-content-between">
-              <Store_Btn params={params} />
+              <div className="fillter-coupons-design d-flex align-items-center justify-content-start">
+                <Link
+                  href={`/store/${params?.client}/All`}
+                  className="btn filter_btn"
+                  type="button"
+                >
+                  <AiFillAppstore /> ALL
+                </Link>
+                <Link
+                  href={`/store/${params?.client}/Deals`}
+                  className="btn filter_btn"
+                  type="button"
+                >
+                  <AiFillAppstore /> Deals
+                </Link>
+                <Link
+                  href={`/store/${params?.client}/Coupons`}
+                  className="btn filter_btn"
+                  type="button"
+                >
+                  <AiFillAppstore /> Coupons
+                </Link>
+                <span>Result : {keys}</span>
+              </div>
             </div>
             <div className="coupons-section container p-0 ">
-              {keys ? (
+              {cate_key === "All" ? (
                 <div className="row">
-                  <Store_Coupon params={params} />
+                  <AllProductCoupon params={params} />
                 </div>
-              ) : (
+              ) : cate_key === "Deals" ? (
                 <div className="row">
                   <Store_Deal params={params} />
                 </div>
-              )}
+              ) : cate_key === "Coupons" ? (
+                <div className="row">
+                  <Store_Coupon params={params} />
+                </div>
+              ) : null}
             </div>
           </div>
         </div>

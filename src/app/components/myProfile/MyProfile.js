@@ -3,15 +3,7 @@ import React, { useEffect, useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { FiCheck, FiMail } from "react-icons/fi";
-
-export function getToken() {
-  let user = JSON.parse(localStorage.getItem("user_data"));
-  if (user) {
-    return user?.token;
-  } else {
-    return "73j93js857fh589djsjaksj384940DJ34849Djjd";
-  }
-}
+import { getToken } from "@/app/securityToken";
 
 function MyProfile() {
   const [loading, setLoading] = useState(false);

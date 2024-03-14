@@ -4,20 +4,16 @@ import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import Link from "next/link";
 import Dhamaka_Store from "@/app/components/dhamaka_deals/Dhamaka_Store";
-import Button from "@/app/components/dhamaka_deals/Button";
 import Dhamaka_Coupon from "@/app/components/dhamaka_deals/Dhamaka_Coupon";
 import Dhamaka_Deal from "@/app/components/dhamaka_deals/Dhamaka_Deal";
 import Dhamaka_Category from "@/app/components/dhamaka_deals/Dhamaka_Category";
+import { AiFillAppstore } from "react-icons/ai";
+import AllProductCoupon from "@/app/components/dhamaka_deals/AllProductCoupon";
 
 function page({ params }) {
   const key = params?.category;
+  const categoryFilter = params?.filter;
   const titles = key?.split("-")?.join(" ");
-
-  // const redirectHandler = (link) => {
-  //   setTimeout(() => {
-  //     window.open(link);
-  //   }, 2000);
-  // };
 
   return (
     <>
@@ -34,19 +30,21 @@ function page({ params }) {
                 <FiChevronRight />
               </span>
               <li>
-                <Link href="/dhamaka-deals/all-category-deals">
-                  Dhamaka Deals
-                </Link>
+                <Link href={`/dhamaka-deals/${key}/All`}>Dhamaka Deals</Link>
               </li>
-              {key === "all-category-deals" ? (
-                " "
-              ) : (
+              <span>
+                <FiChevronRight />
+              </span>
+              <li>
+                <Link href="#">{titles}</Link>
+              </li>
+              {categoryFilter === "All" ? null : (
                 <>
                   <span>
                     <FiChevronRight />
                   </span>
                   <li>
-                    <Link href="#">{key}</Link>
+                    <Link href="#">{categoryFilter}</Link>
                   </li>
                 </>
               )}
@@ -90,12 +88,12 @@ function page({ params }) {
               <div className="CATEGORY-section">
                 <div className="row">
                   <div className="col-12 col-lg-12 col-md-12">
-                    <div className="client-selector mb-3">
+                    {/* <div className="client-selector mb-3">
                       <div className="sarch-text">
                         <h5>Category</h5>
                       </div>
                       <Dhamaka_Category />
-                    </div>
+                    </div> */}
                     <div className="client-selector">
                       <div className="sarch-text">
                         <h5>Store</h5>
@@ -110,21 +108,40 @@ function page({ params }) {
 
           <div className="col-lg-9 col-12">
             <div className="coupons-header d-flex justify-content-start flex-column">
-              <div className="fillter-coupons-design d-flex align-items-center justify-content-start mb-2">
-                <span>
-                  Result :
-                  <span style={{ textTransform: "uppercase" }}>{titles}</span>
-                </span>
+              <div className="fillter-coupons-design d-flex align-items-center justify-content-start">
+                {/* <Link
+                  href={`/dhamaka-deals/${key}/All`}
+                  className="btn filter_btn"
+                  type="button"
+                >
+                  <AiFillAppstore /> All
+                </Link> */}
+                <Link
+                  href={`/dhamaka-deals/${key}/Deals`}
+                  className="btn filter_btn"
+                  type="button"
+                >
+                  <AiFillAppstore /> Deals
+                </Link>
+                <Link
+                  href={`/dhamaka-deals/${key}/Coupons`}
+                  className="btn filter_btn"
+                  type="button"
+                >
+                  <AiFillAppstore /> Coupons
+                </Link>
               </div>
-              <Button params={params} />
             </div>
             <div className="coupons-section container p-0 ">
-              <div className="row">
-                <Dhamaka_Deal params={params} />
-              </div>
-              <div className="row">
-                <Dhamaka_Coupon params={params} />
-              </div>
+              {categoryFilter === "Deals" ? (
+                <div className="row">
+                  <Dhamaka_Deal params={params} />
+                </div>
+              ) : categoryFilter === "Coupons" ? (
+                <div className="row">
+                  <Dhamaka_Coupon params={params} />
+                </div>
+              ) : null}
             </div>
           </div>
         </div>
@@ -134,13 +151,12 @@ function page({ params }) {
   );
 }
 
-
 export default page;
-
 
 export function generateMetadata() {
   return {
     title: "Best Online Deals, Coupons & Shopping offers in India - Cashdost",
-    description:"Explore Best Online Deals, Discounts, Coupons & Shopping offers for top online shopping websites in India. Save your money with Discounts from Cashdost.",
+    description:
+      "Explore Best Online Deals, Discounts, Coupons & Shopping offers for top online shopping websites in India. Save your money with Discounts from Cashdost.",
   };
 }

@@ -16,21 +16,24 @@ export async function getData(keys) {
 }
 
 const Store_Deal = async ({ params }) => {
+  
   const client_key = params?.client?.split("-")?.join(" ");
-  const cate_key = params?.category;
-  const keys = cate_key === "All" ? client_key : cate_key;
-  const { props } = await getData(keys);
+  const { props } = await getData(client_key);
   const serverData = props?.product;
   const finalFilterDeals = serverData?.filter((item) =>
     item.post_data.includes("success")
   );
-  // const redirectHandler = (link) => {
-  //     setTimeout(() => {
-  //       window.open(link);
-  //     }, 2000);
-  //   };
+
   return (
     <>
+    {
+      finalFilterDeals?.length === 0 ?
+      <p>Empty Data</p>
+      :
+      <>
+
+      </>
+    }
       {finalFilterDeals?.map((val, ind) => {
         const {
           client,

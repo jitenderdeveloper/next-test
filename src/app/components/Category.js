@@ -25,13 +25,14 @@ async function Category() {
         <div className="category-list">
           <ul>
             {findalCategory?.map((val, ind) => {
+              const titles = val?.name?.split(" ")?.join("-")
               return (
                 <li key={ind}>
-                  <Link href={`/dhamaka-deals/${val.name}`}>
+                  <Link href={`/dhamaka-deals/${titles}/Deals`}>
                     <span>
-                      <img src={val.image} alt={val.name} lazy="loading" />
+                      <img src={val?.image} alt={val?.name} lazy="loading" />
                     </span>
-                    <span>{val.name}</span>
+                    <span>{val?.name}</span>
                   </Link>
                 </li>
               );
