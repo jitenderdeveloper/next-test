@@ -4,7 +4,7 @@ const nextConfig = {
   // css: ["@/app/globals.css"],
   // css: ["@/app/custom.css"],
   // css: ["@/app/responsive.css"],
-  swcMinify: false,
+  swcMinify: true,
   images: {
     domains: [
       "cdn-icons-png.flaticon.com",
