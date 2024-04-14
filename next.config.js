@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  css: ["@/app/globals.css"],
-  css: ["@/app/custom.css"],
-  css: ["@/app/responsive.css"],
+  // css: ["@/app/globals.css"],
+  // css: ["@/app/custom.css"],
+  // css: ["@/app/responsive.css"],
   swcMinify: false,
   images: {
     domains: [
