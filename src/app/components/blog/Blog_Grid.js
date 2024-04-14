@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export async function getData() {
@@ -53,7 +54,12 @@ async function Blog_Grid() {
                 <Link href={`/blog/${titles}/${_id}`}>
                   <div className="blog-card">
                     <div className="blog-image">
-                      <img src={image} alt="cashdost" />
+                      <Image
+                        width={100}
+                        height={100}
+                        src={image}
+                        alt="cashdost"
+                      />
                       <span>{category}</span>
                     </div>
                     <div className="blog-content">

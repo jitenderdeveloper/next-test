@@ -618,3 +618,9 @@ button:hover {
 .slider_banner a{
   padding: 6px 13px;
 }
+.desktop_menu{
+  display: block;
+}
+.mobile_menu{
+  display: none !important;
+}

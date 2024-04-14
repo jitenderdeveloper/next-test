@@ -6,9 +6,7 @@ import Link from "next/link";
 import Dhamaka_Store from "@/app/components/dhamaka_deals/Dhamaka_Store";
 import Dhamaka_Coupon from "@/app/components/dhamaka_deals/Dhamaka_Coupon";
 import Dhamaka_Deal from "@/app/components/dhamaka_deals/Dhamaka_Deal";
-import Dhamaka_Category from "@/app/components/dhamaka_deals/Dhamaka_Category";
 import { AiFillAppstore } from "react-icons/ai";
-import AllProductCoupon from "@/app/components/dhamaka_deals/AllProductCoupon";
 
 function page({ params }) {
   const key = params?.category;

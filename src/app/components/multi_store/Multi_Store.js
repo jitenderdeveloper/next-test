@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FiEye } from "react-icons/fi";
 
@@ -31,7 +32,7 @@ async function Multi_Store() {
                 <Link href={`/store/${clients}/All`}>
                   <div className="slider-card">
                     <div className="card-img card-logo">
-                      <img src={logo} alt={title} lazy="loading" />
+                      <Image width={100} height={100} src={logo} alt={title} lazy="loading" />
                       <div className="link-live">
                         <Link
                           href={`/store/${clients}/All`}

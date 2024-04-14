@@ -1,0 +1,805 @@
+@media (max-width: 516px) {
+  .fillter-coupons-design span,
+  .desktop_menu {
+    display: none;
+  }
+  .mobile_menu {
+    display: block !important;
+  }
+  /* .mobile_version{
+        border: 1px solid red;
+    } */
+  .navbar-search {
+    width: 100% !important;
+    margin: 6px !important;
+  }
+  .nav_link_mobile {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin-top: 10px !important;
+  }
+  .nav_link_mobile li {
+    width: 20%;
+  }
+  .carousel-inner,
+  .carousel-item,
+  .slider-section,
+  .slider-img {
+    height: auto !important;
+  }
+  .slider-content h1 {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 379px) {
+  .button_btn {
+    width: 40%;
+  }
+  .offer-content h5,
+  .offer-content h4 {
+    font-size: 11px;
+  }
+  .left {
+    width: 25%;
+    border-right: 1px dashed rgba(0, 0, 0, 0.13);
+  }
+  .center h3 {
+    font-size: 12px;
+  }
+  .center p,
+  .center h2 {
+    font-size: 10px;
+  }
+
+  .offer-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .product-grid-store {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)) !important;
+    gap: 14px;
+    padding: 10px;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)) !important;
+    gap: 14px;
+    padding: 10px;
+  }
+  .search-icon button,
+  .navbar-toggler-icon {
+    font-size: 13px !important;
+  }
+}
+
+/* =====================================================516px========================================== */
+
+@media (max-width: 516px) {
+  .claim-form-section form {
+    width: 96%;
+    padding: 12px;
+  }
+  .claim-status {
+    display: block !important;
+  }
+  .winning-grid {
+    flex-direction: column;
+  }
+  .product-single {
+    width: 100%;
+  }
+  canvas {
+    margin-top: 20%;
+    height: 100% !important;
+    width: 100% !important;
+  }
+  .box-bg,
+  #canvas {
+    height: 100% !important;
+    width: 100% !important;
+  }
+  .box-bg .text-center {
+    width: 100%;
+  }
+  .header-img {
+    width: 100%;
+    height: 26vh;
+  }
+  .adds-ban {
+    margin-top: 0rem;
+  }
+  .mobile-res {
+    display: none;
+  }
+  .signup-btn {
+    display: none;
+  }
+  .mobile-nav-res {
+    display: block;
+  }
+  .mobile-nav-res a {
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .store-img {
+    width: 100%;
+    height: 6vh;
+  }
+  .tele-btn {
+    position: absolute !important;
+    top: 100% !important;
+    left: 50%;
+    transform: translate(-50%, 0%);
+  }
+  .tele-btn span svg {
+    font-size: 1.2rem;
+  }
+
+  .tele-btn .link-btn {
+    font-size: 12px !important;
+    border: none;
+    background-color: #229ed9;
+    color: #fff !important;
+    padding: 5px 14px 5px 3px;
+    border-radius: 60px;
+  }
+  .spinner-games-section {
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 99999 !important;
+  }
+  .ads-banner-sec {
+    width: 92%;
+    height: auto;
+    margin: 0 auto;
+  }
+  .slick-list {
+    height: auto;
+  }
+  .client-button {
+    width: 100px !important;
+    font-size: 10px !important;
+  }
+  .deals-heading h4 {
+    font-size: 10px;
+  }
+  .card-logo {
+    height: 6vh !important;
+  }
+  .swiper-pagination-clickable .swiper-pagination-bullet {
+    display: none;
+  }
+  .description-product h5 {
+    font-size: 16px;
+    color: var(--font-color);
+  }
+  .product-single-content h2 {
+    font-size: 13px;
+    width: 80%;
+  }
+
+  .hot-deals-filter {
+    font-size: 1.2rem;
+  }
+
+  .offer-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  .offer-content p,
+  .card-content h5 {
+    font-weight: normal !important;
+  }
+
+  .search-icon button,
+  .navbar-toggler-icon {
+    font-size: 20px !important;
+  }
+
+  .signup-btn a {
+    font-size: 10px !important;
+  }
+  .about-bottom {
+    height: 25vh;
+  }
+  .casddost-about-banner-div-all-text {
+    margin: 3%;
+  }
+
+  .casddost-about-banner-div {
+    height: 17vh;
+  }
+
+  .Tranding-section {
+    margin-top: 1rem;
+  }
+  .image-deals {
+    height: 12vh !important;
+  }
+  .card-img {
+    height: 23vh;
+  }
+  .deals-content h5,
+  .card-content h6 {
+    font-size: 11px;
+  }
+  .bottom-footer,
+  .footer-section {
+    flex-direction: column;
+  }
+  .inner-section {
+    height: auto;
+    width: 100%;
+    padding: 10px 0;
+  }
+  .bottom-footer {
+    margin-top: 1rem;
+  }
+  .card-content {
+    height: 10vh !important;
+  }
+
+  .card-content h6 {
+    height: auto !important;
+  }
+  .deals-content {
+    text-align: center;
+  }
+  .deals-content h4 {
+    font-size: 11px !important;
+    height: auto;
+  }
+  .swiper-button-next,
+  .swiper-rtl .swiper-button-prev,
+  .swiper-button-prev,
+  .swiper-rtl .swiper-button-next {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: 14px !important;
+  }
+  .text-main-step,
+  .input-fields-data label,
+  .coin-section-header .coin-section h4 span,
+  .slider-banner {
+    display: none;
+  }
+  .coupons-banner {
+    height: auto;
+  }
+  .top-offer-banner {
+    height: 18vh;
+  }
+  .coupon-img {
+    width: 100%;
+    height: 6vh;
+  }
+  .offer-content {
+    height: 7vh !important;
+  }
+
+  .description-product,
+  .form_size {
+    width: 100%;
+    text-align: justify;
+  }
+  .form_data {
+    height: auto;
+    padding: 12px;
+  }
+  .coin-section,
+  .coin-section-header {
+    width: auto;
+  }
+  .history-tab button {
+    width: 40% !important;
+  }
+  .input-fields-data input {
+    width: 84%;
+  }
+  .col-data h4 {
+    font-size: 14px;
+  }
+  .view_client {
+    height: 24vh;
+  }
+
+  .Details_card {
+    height: auto;
+  }
+  .deals-btn-product {
+    position: relative;
+  }
+
+  .view_client img {
+    object-fit: contain;
+  }
+  .inner-section:nth-child(1) {
+    padding: 25px 10px 10px 0px !important;
+  }
+  .navbar-light .navbar-brand {
+    width: 31%;
+  }
+  .navbar-light .navbar-toggler-icon {
+    background-image: none;
+    font-size: 1.4rem !important;
+  }
+  .navbar-light .navbar-toggler {
+    border: none;
+    color: none;
+  }
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+  .navbar-nav {
+    margin-left: 0;
+    margin: 20px 0;
+  }
+  .navbar-nav .nav-item {
+    text-align: center;
+  }
+  .modal-dialog {
+    max-width: 356px;
+  }
+  .modal-header button {
+    right: 0px;
+  }
+  .modal-content {
+    background-color: var(--bg-color);
+    backdrop-filter: none;
+  }
+  .form-data {
+    padding: 2rem 0;
+  }
+  .card-content h1 {
+    font-size: 11px;
+  }
+  .offer-content p,
+  .card-content h5 {
+    font-size: 10px;
+  }
+  .card-button a {
+    font-size: 10px !important;
+    padding: 6px;
+  }
+  .text-main {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .form-go-up-side {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .product-grid-store {
+    padding: 10px !important;
+  }
+  .product-grid-store {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 14px;
+    padding: 10px;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 14px;
+    padding: 10px !important;
+  }
+  .product-items {
+    padding: 0;
+  }
+  .coupon-details {
+    width: 100%;
+  }
+  .modal-coupon {
+    width: auto;
+  }
+  .coupons-content {
+    height: auto !important;
+  }
+  .right {
+    width: 86px;
+  }
+  .coupon-image {
+    height: 8vh;
+  }
+  .coupon-img img {
+    width: 50%;
+  }
+  .coupon {
+    width: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: auto;
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.5));
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .search-data {
+    width: 22rem;
+    margin-top: 1rem;
+  }
+  .closeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 2rem;
+  }
+  .search-store {
+    width: 23rem;
+    height: 73vh;
+  }
+  .scroll-bar li img {
+    width: 100px;
+  }
+  .outer-content {
+    width: 80%;
+  }
+  .outer-content h1 {
+    font-size: 20px;
+  }
+  .blog-banner {
+    height: auto;
+  }
+}
+
+/* ==========================================850px===================================== */
+
+@media (min-width: 516px) and (max-width: 850px) {
+  .swiper-pagination-clickable .swiper-pagination-bullet {
+    cursor: pointer;
+    display: none;
+  }
+  .footer-logo {
+    padding: 4px;
+    width: 50%;
+  }
+  .store-img {
+    width: 30%;
+  }
+  .about-bottom {
+    height: 25vh;
+  }
+  .casddost-about-banner-div-all-text {
+    margin: 3%;
+  }
+
+  .casddost-about-banner-div {
+    height: 17vh;
+  }
+
+  .Tranding-section {
+    margin-top: 1rem;
+  }
+  .image-deals,
+  .card-img {
+    height: 15vh;
+  }
+  .deals-content h5,
+  .card-content h6 {
+    font-size: 11px;
+  }
+  .bottom-footer,
+  .footer-section {
+    flex-direction: column;
+  }
+  .inner-section {
+    height: auto;
+    width: 100%;
+    padding: 10px 0;
+  }
+  .bottom-footer {
+    margin-top: 1rem;
+  }
+  .card-content {
+    height: 14vh;
+  }
+
+  .card-content h6 {
+    height: auto !important;
+  }
+  .deals-content {
+    text-align: center;
+  }
+  .deals-content h4 {
+    font-size: 11px;
+    height: auto;
+  }
+  .swiper-button-next,
+  .swiper-rtl .swiper-button-prev,
+  .swiper-button-prev,
+  .swiper-rtl .swiper-button-next {
+    width: 30px !important;
+    height: 30px !important;
+  }
+  .swiper-button-prev:after,
+  .swiper-button-next:after {
+    font-size: 14px !important;
+  }
+  .text-main-step,
+  .input-fields-data label,
+  .coin-section-header .coin-section h4 span,
+  .mobile-res {
+    display: none;
+  }
+  .coupons-banner {
+    height: auto;
+  }
+  .top-offer-banner {
+    height: 18vh;
+  }
+  .coupon-img {
+    width: 100%;
+    height: 6vh;
+  }
+  .offer-content {
+    height: 7vh !important;
+  }
+
+  .description-product,
+  .form_size {
+    width: 100%;
+    text-align: justify;
+  }
+  .form_data {
+    height: auto;
+    padding: 12px;
+  }
+  .coin-section,
+  .coin-section-header {
+    width: auto;
+  }
+  .history-tab button {
+    width: 40% !important;
+  }
+  .input-fields-data input {
+    width: 84%;
+  }
+  .col-data h4 {
+    font-size: 14px;
+  }
+  .view_client {
+    height: 24vh;
+  }
+  .product-single-content h2 {
+    font-size: 20px;
+    width: 100%;
+  }
+  .Details_card {
+    height: auto;
+  }
+  .deals-btn-product {
+    position: relative;
+  }
+
+  .view_client img {
+    object-fit: contain;
+  }
+  .inner-section:nth-child(1) {
+    padding: 25px 10px 10px 0px !important;
+  }
+  .navbar-light .navbar-brand {
+    width: 37%;
+  }
+  .navbar-light .navbar-toggler-icon {
+    background-image: none;
+    font-size: 1.4rem;
+  }
+  .navbar-light .navbar-toggler {
+    border: none;
+    color: none;
+  }
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+  .navbar-nav {
+    margin-left: 0;
+    margin: 20px 0;
+  }
+  .navbar-nav .nav-item {
+    text-align: center;
+  }
+  .modal-dialog {
+    max-width: 356px;
+  }
+  .modal-header button {
+    right: 0px;
+  }
+  .modal-content {
+    background-color: var(--bg-color);
+    backdrop-filter: none;
+  }
+  .form-data {
+    padding: 2rem 0;
+  }
+  .card-content h1 {
+    font-size: 14px;
+  }
+  .offer-content p,
+  .card-content h5 {
+    font-size: 10px;
+  }
+  .card-button a {
+    font-size: 10px !important;
+    padding: 6px;
+  }
+  .text-main {
+    width: 100%;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .form-go-up-side {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  .product-grid-store {
+    padding: 10px !important;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
+    gap: 14px;
+    padding: 10px;
+  }
+  .product-grid-store {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)) !important;
+    gap: 18px;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)) !important;
+    gap: 14px;
+    padding: 10px;
+  }
+  .product-items {
+    padding: 0;
+  }
+  .coupon-details {
+    width: 100%;
+  }
+  .modal-coupon {
+    width: auto;
+  }
+  .coupons-content {
+    height: auto !important;
+  }
+  .right {
+    width: 86px;
+  }
+  .coupon-image {
+    height: 8vh;
+  }
+  .coupon-img img {
+    width: 50%;
+  }
+  .coupon {
+    width: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: auto;
+    filter: drop-shadow(0 3px 5px rgba(0, 0, 0, 0.5));
+    display: flex;
+    align-items: stretch;
+    position: relative;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+}
+@media (min-width: 516px) and (max-width: 900px) {
+  .text-main-head {
+    text-align: center;
+  }
+  .form-go-up-side {
+    margin-top: 130px;
+  }
+  .text-main-2 {
+    height: 40vh;
+    -webkit-box-shadow: 0px 0px 8px 1px #0000002a;
+    -moz-box-shadow: 0px 0px 8px 1px #0000002a;
+    box-shadow: 0px 0px 8px 1px #0000002a;
+    border-radius: 20px;
+    margin-top: 10px;
+  }
+  .card-img {
+    height: 16vh;
+  }
+  .card-content {
+    height: 12vh;
+  }
+  .casddost-about-banner-div {
+    height: 20vh;
+  }
+  .about-bottom {
+    height: 20vh;
+  }
+  .top-offer-banner {
+    height: 17vh;
+  }
+}
+@media (min-width: 1050px) and (max-width: 1400px) {
+  .ads-img {
+    width: 100%;
+    height: 60vh;
+  }
+  .ads-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .ads-banner {
+    position: absolute;
+    top: 260px;
+    left: 3%;
+    transform: translate(0%, 173%);
+  }
+}
+
+@media (min-width: 1300px) {
+  .card-img {
+    height: 25vh;
+  }
+
+  .card-content {
+    height: 13vh;
+  }
+  .deals-content {
+    height: 10vh;
+  }
+  .tranding-offer {
+    height: 10vh;
+  }
+  .tranding-offer h5 {
+    font-size: 12px;
+  }
+
+  .card-logo {
+    height: 20vh !important;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 18px;
+  }
+  .offer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 15px;
+  }
+}
+
+@media (min-width: 2800px) {
+  .offer-content {
+    height: 6vh;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+  .header-img {
+    width: 100%;
+    height: auto;
+  }
+}

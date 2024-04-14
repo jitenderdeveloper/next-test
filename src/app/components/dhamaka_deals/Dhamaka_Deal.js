@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FiCalendar } from "react-icons/fi";
@@ -46,9 +47,9 @@ const Dhamaka_Deal = async ({ params }) => {
                 <Link href={`/store/${client?.title}/${encodedTitle}/${_id}`}>
                   <div className="outer-items">
                     <div className="items-image">
-                      <img src={image} alt={title} lazy="loading" />
+                      <Image width={100} height={100} src={image} alt={title} lazy="loading" />
                       <span>
-                        <img
+                        <Image width={100} height={100}
                           src={client?.logo}
                           alt={client?.title}
                           lazy="loading"

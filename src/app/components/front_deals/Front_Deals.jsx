@@ -1,5 +1,6 @@
 import { FiCalendar } from "react-icons/fi";
 import Link from "next/link";
+import Image from "next/image";
 
 export async function getServerSideProps() {
   const res = await fetch("https://api.cashdost.com/api/product", {
@@ -16,22 +17,9 @@ export async function getServerSideProps() {
 const Deals = async () => {
   const data = await getServerSideProps();
   const serverData = data?.props?.product;
-  // console.log("props", serverData);
   const findalData = serverData?.filter((item) =>
     item.post_data.includes("success")
   );
-
-  // const redirectHandler = (link) => {
-  //   setTimeout(() => {
-  //     window.open(link);
-  //   }, 2000);
-  // };
-
-  // const LinkredirectHandler = (link) => {
-  //   setTimeout(() => {
-  //     window.open(link);
-  //   }, 2000);
-  // };
 
   return (
     <div className="home-coupon-section mt-5 mb-5">
@@ -62,15 +50,23 @@ const Deals = async () => {
               const encodedTitle = encodeURIComponent(titles);
               return (
                 <div key={_id} className="col-12 col-lg-3 col-md-4 mt-2 mb-4">
-                  <Link
-                    href={`/deals/${clients}/${encodedTitle}/${_id}`}
-                    // onClick={() => LinkredirectHandler(link)}
-                  >
+                  <Link href={`/deals/${clients}/${encodedTitle}/${_id}`}>
                     <div className="outer-items">
                       <div className="items-image">
-                        <img src={image} alt={title} loading="lazy" />
+                        <Image
+                          width={100}
+                          height={100}
+                          src={image}
+                          alt={title}
+                          loading="lazy"
+                        />
                         <span>
-                          <img src={client?.logo} alt={client?.title} />
+                          <Image
+                            width={100}
+                            height={100}
+                            src={client?.logo}
+                            alt={client?.title}
+                          />
                         </span>
                       </div>
                       <div className="items-content">
@@ -86,7 +82,6 @@ const Deals = async () => {
                           <Link
                             href={`/deals/${clients}/${encodedTitle}/${_id}`}
                             type="button"
-                            // onClick={() => redirectHandler(link)}
                           >
                             Grab Deal
                           </Link>

@@ -9,6 +9,8 @@ import {
 import { SiQuora } from "react-icons/si";
 import { ImPinterest2 } from "react-icons/im";
 import Link from "next/link";
+import Logo from "../../../public/assets/image/logo.png";
+import Image from "next/image";
 
 function Footer() {
   return (
@@ -20,8 +22,10 @@ function Footer() {
               <div className="inner-section">
                 <div className="footer-logo">
                   <Link href="/">
-                    <img
-                      src="https://api.cashdost.com/public/uploads/1682425219182cashdost1.png"
+                    <Image
+                      width={100}
+                      height={100}
+                      src={Logo.src}
                       alt="cashdost"
                     />
                   </Link>
@@ -51,7 +55,7 @@ function Footer() {
                     <Link href="/contact-us">Contact Us</Link>
                   </li>
                   <li>
-                    <Link href="/blog/category/filter/All">Cashdost Blog</Link>
+                    <Link href="/blog">Cashdost Blog</Link>
                   </li>
                   {/* <li>
                     <Link href="/product-store-testing/category/All">Testing</Link>

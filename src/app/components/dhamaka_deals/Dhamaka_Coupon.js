@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FiCalendar, FiClock } from "react-icons/fi";
@@ -20,8 +21,6 @@ async function Dhamaka_Coupon({ params }) {
   const findalCoupons = props?.coupons?.filter((item) =>
     item.post_data.includes("success")
   );
-
-  console.log("product------------------", findalCoupons);
 
   return (
     <>
@@ -48,7 +47,13 @@ async function Dhamaka_Coupon({ params }) {
                 <Link href={`/coupon/${client?.title}/${encodedTitle}/${_id}`}>
                   <div className="outer-items">
                     <div className="items-image">
-                      <img src={client?.logo} alt={title} lazy="loading" />
+                      <Image
+                        width={100}
+                        height={100}
+                        src={client?.logo}
+                        alt={title}
+                        lazy="loading"
+                      />
                       <span>
                         <h6>
                           <FiClock /> {expired_date}
@@ -67,7 +72,6 @@ async function Dhamaka_Coupon({ params }) {
                         <p>{description?.slice(0, 65)}...</p>
                         <Link
                           href={`/coupon/${client?.title}/${encodedTitle}/${_id}`}
-                          //   onClick={() => redirectHandler(link)}
                           type="button"
                           className="coupon_link_btn"
                         >

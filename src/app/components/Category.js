@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -30,7 +31,7 @@ async function Category() {
                 <li key={ind}>
                   <Link href={`/dhamaka-deals/${titles}/Deals`}>
                     <span>
-                      <img src={val?.image} alt={val?.name} lazy="loading" />
+                      <Image width={100} height={100} src={val?.image} alt={val?.name} lazy="loading" />
                     </span>
                     <span>{val?.name}</span>
                   </Link>

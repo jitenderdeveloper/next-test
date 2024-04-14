@@ -1,5 +1,6 @@
 "use client";
 import { useGetBannerQuery } from "@/app/redux/Slice/bannerSlice";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 
@@ -41,7 +42,7 @@ function Slider_Com() {
                   <Link href={link} target="_blank">
                     <div className="slider-items">
                       <div className="slider-img">
-                        <img src={image} alt={title} loading="lazy" />
+                        <Image width={1000} height={100} src={image} alt={title} />
                       </div>
                       <div className="slider-content d-flex justify-content-arround">
                         <span className="slider_side_content">
