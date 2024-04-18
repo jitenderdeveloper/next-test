@@ -23,9 +23,13 @@ async function Dhamaka_Category() {
     <>
       <ul>
         {findalCategory?.map((val, ind) => {
+          const titles = val?.name?.split(" ")?.join("-");
           return (
             <li key={ind} className="nav-items">
-              <Link href={`/dhamaka-deals/${val.name}`} className="nav-link">
+              <Link
+                href={`/dhamaka-deals/${titles}/Deals`}
+                className="nav-link"
+              >
                 <span>
                   <FiChevronRight />
                 </span>{" "}

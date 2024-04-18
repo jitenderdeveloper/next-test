@@ -1,23 +1,17 @@
 import Head from "next/head";
-import {
-  FiCalendar,
-  FiChevronRight,
-  FiClock,
-  FiShoppingBag,
-  FiTag,
-} from "react-icons/fi";
+import { FiChevronRight, FiShoppingBag } from "react-icons/fi";
 import { ImTicket } from "react-icons/im";
 import Navbar from "@/app/components/Navbar";
 import Footer from "@/app/components/Footer";
 import Link from "next/link";
-import Coupon_Card from "@/app/components/coupon_card/Coupon_Card";
 import Card_Category from "@/app/components/coupon_card/Card_Category";
 import Card_Store from "@/app/components/coupon_card/Card_Store";
-import Coupon_Single_Card from "@/app/components/coupon_card/Coupon_Single_Card";
+import Coupon_Client_Card from "@/app/components/coupon_card/Coupon_Client_Card";
 
 function Coupon({ params }) {
   const key = params?.key;
   const keyss = key?.split("-")?.join(" ");
+  console.log("keys", keyss);
 
   return (
     <>
@@ -154,7 +148,6 @@ function Coupon({ params }) {
                   </div>
                 </div>
               </div>
-
             </div>
           </div>
 
@@ -165,15 +158,9 @@ function Coupon({ params }) {
               </div>
             </div>
             <div className="coupons-section container p-0 ">
-              {key === "All" ? (
-                <div className="row">
-                  <Coupon_Card />
-                </div>
-              ) : (
-                <div className="row">
-                  <Coupon_Single_Card params={params} />
-                </div>
-              )}
+              <div className="row">
+                <Coupon_Client_Card params={params} />
+              </div>
             </div>
           </div>
         </div>
@@ -185,10 +172,10 @@ function Coupon({ params }) {
 
 export default Coupon;
 
-
 export function generateMetadata() {
   return {
     title: "All Coupons",
-    description:"Explore Best Online Deals, Discounts, Coupons & Shopping offers for top online shopping websites in India. Save your money with Discounts from Cashdost.",
+    description:
+      "Explore Best Online Deals, Discounts, Coupons & Shopping offers for top online shopping websites in India. Save your money with Discounts from Cashdost.",
   };
 }

@@ -2,9 +2,13 @@ import Link from "next/link";
 import { FiCalendar, FiClock } from "react-icons/fi";
 
 export async function getData(params) {
-  const res = await fetch(`https://api.cashdost.com/api/coupons`, {
-    cache: "force-cache",
-  });
+  const q = params?.key;
+  const res = await fetch(
+    `https://api.cashdost.com/api/coupons/search/q/${q}`,
+    {
+      cache: "force-cache",
+    }
+  );
   const data = await res.json();
   return {
     props: {
@@ -13,18 +17,18 @@ export async function getData(params) {
   };
 }
 
-async function Coupon_Card() {
-  const { props } = await getData();
-  const findalCouponData = props?.coupons?.filter((item) =>
+async function Coupon_Client_Card({ params }) {
+  const { props } = await getData(params);
+  const findalCoupon = props?.coupons?.filter((item) =>
     item.post_data.includes("success")
   );
   return (
     <>
-      {findalCouponData?.length === 0 ? (
+      {findalCoupon?.length === 0 ? (
         <p className="text-center text-secondary">Result is Empty</p>
       ) : (
         <>
-          {findalCouponData?.map((val) => {
+          {findalCoupon?.map((val) => {
             const {
               client,
               description,
@@ -37,17 +41,17 @@ async function Coupon_Card() {
               category,
             } = val;
             const titles = offer?.split(" ")?.join("-");
-            const split_client = client?.title?.split(" ")?.join("-");
+            const split_client = client[0]?.title?.split(" ")?.join("-");
             const encodedTitle = encodeURIComponent(titles);
             return (
               <div key={_id} className="col-12 col-lg-4 col-md-4 mt-4">
                 <Link
                   href={`/coupon/view/${split_client}/${encodedTitle}/${_id}`}
-                  //   onClick={() => redirectHandler(link)}
+                  // onClick={() => redirectHandler(link)}
                 >
                   <div className="outer-items">
                     <div className="items-image">
-                      <img src={client?.logo} alt={title} lazy="loading" />
+                      <img src={client[0]?.logo} alt={title} lazy="loading" />
                       <span>
                         <h6>
                           <FiClock /> {expired_date}
@@ -56,7 +60,7 @@ async function Coupon_Card() {
                     </div>
                     <div className="items-content">
                       <div className="items-icon d-flex justify-content-between mb-2 mt-1">
-                        <span>{category?.name}</span>
+                        <span>{category[0]?.name}</span>
                         <span>
                           <FiCalendar /> {createdAt?.slice(0, 10)}
                         </span>
@@ -66,7 +70,7 @@ async function Coupon_Card() {
                         <p>{description?.slice(0, 65)}...</p>
                         <Link
                           href={`/coupon/view/${client?.title}/${encodedTitle}/${_id}`}
-                          //   onClick={() => redirectHandler(link)}
+                          // onClick={() => redirectHandler(link)}
                           type="button"
                           className="coupon_link_btn"
                         >
@@ -85,4 +89,4 @@ async function Coupon_Card() {
   );
 }
 
-export default Coupon_Card;
+export default Coupon_Client_Card;

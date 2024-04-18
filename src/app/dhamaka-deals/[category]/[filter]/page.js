@@ -7,6 +7,7 @@ import Dhamaka_Store from "@/app/components/dhamaka_deals/Dhamaka_Store";
 import Dhamaka_Coupon from "@/app/components/dhamaka_deals/Dhamaka_Coupon";
 import Dhamaka_Deal from "@/app/components/dhamaka_deals/Dhamaka_Deal";
 import { AiFillAppstore } from "react-icons/ai";
+import Dhamaka_Category from "@/app/components/dhamaka_deals/Dhamaka_Category";
 
 function page({ params }) {
   const key = params?.category;
@@ -86,12 +87,12 @@ function page({ params }) {
               <div className="CATEGORY-section">
                 <div className="row">
                   <div className="col-12 col-lg-12 col-md-12">
-                    {/* <div className="client-selector mb-3">
+                    <div className="client-selector mb-3">
                       <div className="sarch-text">
                         <h5>Category</h5>
                       </div>
                       <Dhamaka_Category />
-                    </div> */}
+                    </div>
                     <div className="client-selector">
                       <div className="sarch-text">
                         <h5>Store</h5>
